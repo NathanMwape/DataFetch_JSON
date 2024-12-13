@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "data",
+        "content": "le contenue de ce fichier c'est data",
+        "date": "2024-12-13",
+        "image": "\/projet1\/uploads\/crayon.png"
+    },
+    {
+        "id": 2,
+        "title": "ortinateruLes tendances du d\u00e9veloppement web en 2024 Contenu:",
+        "content": "En 2024, les tendances en mati\u00e8re de d\u00e9veloppement web continuent d'\u00e9voluer rapidement. Les technologies comme React, Vue.js et Svelte sont en t\u00eate, tandis que les frameworks backend comme Node.js et Django restent populaires. L'importance de l'accessibilit\u00e9 et de la performance continue d'augmenter. D\u00e9couvrez les tendances cl\u00e9s \u00e0 surveiller cette ann\u00e9e.",
+        "date": "2024-12-13",
+        "image": "\/projet1\/uploads\/carte-france-regions.png"
+    },
+    {
+        "id": "3",
+        "title": "Mon premier article",
+        "content": "Ceci est le premier paragraphe.Voici le deuxi\u00e8me paragraphe. Et encore un autre paragraphe.",
+        "date": "2024-12-13",
+        "image": "\/projet1\/uploads\/WhatsApp Image 2024-10-11 at 09.59.09 (1).jpeg"
+    }
+]
