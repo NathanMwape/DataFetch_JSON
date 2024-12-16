@@ -3,21 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recherche intégrée dans Select</title>
+    <title>Recherche intégrée avec message</title>
 
     <!-- Inclure le CSS de Select2 -->
-    <link href="select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- jQuery obligatoire pour Select2 -->
-    <script src="jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Inclure le JS de Select2 -->
-    <script src="select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <style>
-        /* Styliser l'input pour afficher le placeholder correctement */
-        .select2-selection__placeholder {
-            color: #767373 !important; /* Couleur du placeholder */
+        /* Styliser la barre de recherche de Select2 */
+        .select2-container .select2-search--dropdown .select2-search__field {
+            padding-left: 30px; /* Espace pour l'icône */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Ajouter une icône à gauche de l'input */
+        .select2-container .select2-search--dropdown::before {
+            content: "\f002"; /* Code Unicode de l'icône (loupe) FontAwesome */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Ajouter un symbole (|) à la droite de l'input */
+        .select2-container .select2-search--dropdown::after {
+            content: "||";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Position relative pour contenir les éléments pseudo */
+        .select2-search--dropdown {
+            position: relative;
         }
     </style>
 </head>
@@ -43,7 +77,15 @@
             $('#currency').select2({
                 placeholder: "Choisissez une devise", // Texte placeholder
                 allowClear: true, // Permet d'effacer la sélection
-                minimumResultsForSearch: 0 // Affiche la recherche même avec peu d'options
+                minimumResultsForSearch: 0, // Affiche la recherche même avec peu d'options
+                language: {
+                    noResults: function() {
+                        return "Aucun résultat trouvé"; // Message personnalisé
+                    }
+                },
+                escapeMarkup: function(markup) {
+                    return markup; // Permet l'affichage du HTML si besoin
+                }
             });
         });
     </script>
