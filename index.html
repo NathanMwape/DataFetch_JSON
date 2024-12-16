@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche intégrée dans Select</title>
+
+    <!-- Inclure le CSS de Select2 -->
+    <link href="select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery obligatoire pour Select2 -->
+    <script src="jquery-3.6.0.min.js"></script>
+
+    <!-- Inclure le JS de Select2 -->
+    <script src="select2.min.js"></script>
+
+    <style>
+        /* Styliser l'input pour afficher le placeholder correctement */
+        .select2-selection__placeholder {
+            color: #767373 !important; /* Couleur du placeholder */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Choisir une devise</h2>
+    <!-- Select avec recherche intégrée -->
+    <label for="currency">Devise :</label>
+    <select id="currency" style="width: 300px;">
+        <option></option> <!-- Option vide pour le placeholder -->
+        <option value="CLP">CLP - Chilean Peso</option>
+        <option value="USD">USD - US Dollar</option>
+        <option value="PHP">PHP - Philippine Peso</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="HKD">HKD - Hong Kong Dollar</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+        <option value="ILS">ILS - Israeli Shekel</option>
+        <option value="JPY">JPY - Japanese Yen</option>
+    </select>
+
+    <script>
+        $(document).ready(function() {
+            $('#currency').select2({
+                placeholder: "Choisissez une devise", // Texte placeholder
+                allowClear: true, // Permet d'effacer la sélection
+                minimumResultsForSearch: 0 // Affiche la recherche même avec peu d'options
+            });
+        });
+    </script>
+
+</body>
+</html>
